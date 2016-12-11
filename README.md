@@ -1,2 +1,2 @@
 # QuoteMachine
-Console based quote generating app create for practice purpose.
+Command-line based quote generating app created in practice of Java.
