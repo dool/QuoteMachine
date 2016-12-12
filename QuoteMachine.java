@@ -9,17 +9,17 @@ import java.util.*;
 import edu.duke.*;
 public class QuoteMachine {
 
-    private ArrayList<Quote> quoteLog;
+    private ArrayList<Quote> quoteRecord;
     
     public QuoteMachine(){
-        quoteLog = new ArrayList<Quote>();
+        quoteRecord = new ArrayList<Quote>();
     }
     
     public void readFile(String fileName){
         FileResource fr = new FileResource(fileName);
         for(String s: fr.lines()){
-            Quote brainy = parseQuote(s);
-            quoteLog.add(brainy);
+            Quote brainy = QuoteLog.parseQuote(s);
+            quoteRecord.add(brainy);
         }
     }
     
@@ -27,7 +27,7 @@ public class QuoteMachine {
     
     public void printQuote(){
     
-        for (Quote quotes: quoteLog){
+        for (Quote quotes: quoteRecord){
             System.out.println("*******************************************************************************");
             System.out.println("                 " + quotes.getCategory());
             System.out.println(quotes.getQuote());
@@ -35,13 +35,6 @@ public class QuoteMachine {
         }
     }
     
-    private Quote parseQuote(String line){
-            int fPipe = line.indexOf("|");
-            int lPipe = line.lastIndexOf("|");
-            String quote = line.substring(0,fPipe);
-            String author = line.substring(fPipe+1, lPipe);
-            String category = line.substring(lPipe+1,line.length());
-            return new Quote(quote, author, category);
-    }
+   
     
 }

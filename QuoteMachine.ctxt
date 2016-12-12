@@ -5,6 +5,4 @@ comment1.params=fileName
 comment1.target=void\ readFile(java.lang.String)
 comment2.params=
 comment2.target=void\ printQuote()
-comment3.params=line
-comment3.target=Quote\ parseQuote(java.lang.String)
-numComments=4
+numComments=3
